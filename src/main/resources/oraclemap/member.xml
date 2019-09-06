@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.bit.ex.member.mapper.Mmapper">
+
+	<select id="selectMemberList" resultType="edu.bit.ex.member.dto.MemberDto" >
+			SELECT * FROM MEMBER
+	</select>	
+
+	<insert id="insertMember" parameterType="edu.bit.ex.member.vo.MemberVO">
+		INSERT INTO MEMBER VALUES(#{id}, #{pwd}, #{name} )
+	</insert>
+
+    <insert id="delectMember" parameterType="String">
+		delete from MEMBER where id= #{id}
+	</insert>
+</mapper>

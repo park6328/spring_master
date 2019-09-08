@@ -5,15 +5,27 @@
 
 <mapper namespace="edu.bit.ex.member.mapper.Mmapper">
 
-	<select id="selectMemberList" resultType="edu.bit.ex.member.dto.MemberDto" >
+	<select id="selectMemberList" resultType="edu.bit.ex.member.vo.MmemberVO" >
 			SELECT * FROM MEMBER
 	</select>	
 
-	<insert id="insertMember" parameterType="edu.bit.ex.member.vo.MemberVO">
+	<insert id="insertMember" parameterType="edu.bit.ex.member.vo.MmemberVO">
 		INSERT INTO MEMBER VALUES(#{id}, #{pwd}, #{name} )
 	</insert>
 
-    <insert id="delectMember" parameterType="String">
-		delete from MEMBER where id= #{id}
-	</insert>
+  	<select id="selectMemberOne" resultType="edu.bit.ex.member.vo.MmemberVO" >
+			SELECT * FROM MEMBER where id = #{id} 
+	</select>
+	
+	<update id="updateMember" parameterType="edu.bit.ex.member.vo.MmemberVO" > 
+			UPDATE MEMBER SET PWD = #{pwd}
+			where id=#{id} 
+	</update>
+	
+	<delete id="deleteMember" parameterType="edu.bit.ex.member.vo.MmemberVO" > 
+			Delete From member 
+			where id=#{id}		
+			
+	</delete>
+	
 </mapper>

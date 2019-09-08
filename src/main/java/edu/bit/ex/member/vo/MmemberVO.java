@@ -1,6 +1,6 @@
 package edu.bit.ex.member.vo;
 
-public class MemberVO {
+public class MmemberVO {
 	
 	String id;
 	String pwd;

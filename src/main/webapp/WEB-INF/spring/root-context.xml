@@ -10,7 +10,7 @@
 	<bean name="dataSource"	class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="core.log.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<property name="username" value="test" />
+		<property name="username" value="master" />
 		<property name="password" value="1234" />
 	</bean>
 	
@@ -22,8 +22,6 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
-	
-	
-	
-	<mybatis-spring:scan base-package="edu.bit.ex"/>	
+		
+	<mybatis-spring:scan base-package="edu.bit.ex.*"/>	
 </beans>
